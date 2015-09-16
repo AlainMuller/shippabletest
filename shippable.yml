@@ -1,0 +1,18 @@
+language: java
+jdk:
+    - oraclejdk7
+env:
+  global:
+      - ANDROID_HOME=/tmp/android-sdk_b890  
+before_install:
+    - >
+      test -e $ANDROID_HOME || 
+      (mkdir -p $ANDROID_HOME && 
+       wget https://dl.dropboxusercontent.com/u/1288556/android-sdk_b890.zip -q -O /tmp/android-sdk_b890.zip &&
+       unzip /tmp/android-sdk_b890.zip -d /tmp)
+install:
+    - ./gradlew assembleDebug
+notifications:
+    email:
+        recipients:
+            - henrik@greenerpastures.dk
