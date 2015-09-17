@@ -12,7 +12,7 @@ before_install:
        unzip /tmp/android-sdk_b890.zip -d /tmp)
 install:
     - ls -l /tmp/android-sdk_b890/build-tools/22.0.1/aapt
-    - ./gradlew assembleDebug
+    - java -version
 notifications:
     email:
         recipients:
