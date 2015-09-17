@@ -1,6 +1,6 @@
 language: java
 jdk:
-    - oraclejdk7
+    - oraclejdk8
 env:
   global:
       - ANDROID_HOME=/tmp/android-sdk_b890  
@@ -10,9 +10,11 @@ before_install:
       (mkdir -p $ANDROID_HOME && 
        wget https://dl.dropboxusercontent.com/u/1288556/android-sdk_b890.zip -q -O /tmp/android-sdk_b890.zip &&
        unzip /tmp/android-sdk_b890.zip -d /tmp)
+    - sudo apt-get install -y lib32stdc++6 lib32z1
 install:
     - ls -l /tmp/android-sdk_b890/build-tools/22.0.1/aapt
     - java -version
+    - ./gradlew assembleDebug
 notifications:
     email:
         recipients:
