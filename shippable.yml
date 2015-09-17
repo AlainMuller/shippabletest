@@ -12,8 +12,10 @@ before_install:
        unzip /tmp/android-sdk_b890.zip -d /tmp)
     - sudo apt-get update
     - sudo apt-get install -y lib32stdc++6 lib32z1
+    - lsb_release -a
 install:
     - ls -l /tmp/android-sdk_b890/build-tools/22.0.1/aapt
+    - ldd /tmp/android-sdk_b890/build-tools/22.0.1/aapt
     - java -version
     - ./gradlew assembleDebug
 notifications:
