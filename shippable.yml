@@ -18,8 +18,8 @@ before_install:
     - sudo apt-get install -y lib32stdc++6 lib32z1
     - lsb_release -a
 install:
-    - ls -l /tmp/android-sdk_b890/build-tools/22.0.1/aapt
-    - file /tmp/android-sdk_b890/build-tools/22.0.1/aapt
+    - ls -l /tmp/android-sdk_b890.linux/build-tools/22.0.1/aapt
+    - file /tmp/android-sdk_b890.linux/build-tools/22.0.1/aapt
     - java -version
     - ./gradlew assembleDebug
 notifications:
