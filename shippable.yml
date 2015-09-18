@@ -11,11 +11,13 @@ before_install:
        wget https://dl.dropboxusercontent.com/u/1288556/android-sdk_b890.zip -q -O /tmp/android-sdk_b890.zip &&
        unzip /tmp/android-sdk_b890.zip -d /tmp)
     - sudo apt-get update
+    - sudo apt-get install -y ia32-libs
+    - sudo apt-get install -y ia32-libs-multiarch
+    - sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5
     - sudo apt-get install -y lib32stdc++6 lib32z1
     - lsb_release -a
 install:
     - ls -l /tmp/android-sdk_b890/build-tools/22.0.1/aapt
-    - ldd /tmp/android-sdk_b890/build-tools/22.0.1/aapt
     - java -version
     - ./gradlew assembleDebug
 notifications:
