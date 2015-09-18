@@ -3,7 +3,7 @@ jdk:
     - oraclejdk8
 env:
   global:
-      - ANDROID_HOME=/tmp/android-sdk_b890  
+      - ANDROID_HOME=/tmp/android-sdk_b890.linux  
 before_install:
     - >
       test -e $ANDROID_HOME || 
