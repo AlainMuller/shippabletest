@@ -8,7 +8,7 @@ before_install:
     - >
       test -e $ANDROID_HOME || 
       (mkdir -p $ANDROID_HOME && 
-       wget https://dl.dropboxusercontent.com/u/1288556/android-sdk_b890.zip -q -O /tmp/android-sdk_b890.zip &&
+       wget https://www.dropbox.com/s/xo2ns6p67s636tv/android-sdk_b890.linux.zip?dl=0 -q -O /tmp/android-sdk_b890.zip &&
        unzip /tmp/android-sdk_b890.zip -d /tmp)
     - sudo apt-get update
     - sudo apt-get install libgl1-mesa-dri:i386
